@@ -1,36 +1,52 @@
-# IntelliClick CRM - Redesigned Dashboard
+# Weather Forecast Web Application
 
-A modern, responsive CRM dashboard focusing on lead management and user experience. This project is a redesign of the IntelliClick CRM interface based on heuristic evaluation and user flow optimization.
+A modern, responsive weather forecast application built with Next.js and TypeScript. This application allows users to search for cities worldwide and view detailed weather information.
 
 ## Features
 
-- Responsive design that works on mobile, tablet, and desktop
-- Improved lead management with visual status indicators
-- Enhanced search and filtering capabilities
-- Intuitive navigation and information hierarchy
-- Database integration for persistent data storage
+- **City Search**: Find cities from around the world
+- **Current Weather**: View real-time weather conditions
+- **5-Day Forecast**: See upcoming weather predictions
+- **Weather Details**: Explore detailed weather metrics (temperature, humidity, wind, etc.)
+- **Unit Toggling**: Switch between Celsius/Fahrenheit and metric/imperial units
+- **Responsive Design**: Works seamlessly on mobile, tablet, and desktop
+- **Dark/Light Mode**: Choose your preferred theme
+- **Caching Layer**: PostgreSQL database for improved performance
 
-## Tech Stack
+## Technologies Used
 
-- React.js with TypeScript
-- Wouter for routing
-- TailwindCSS for styling
-- Drizzle ORM with PostgreSQL
-- Express.js backend
+- **Frontend**: React, TypeScript, TailwindCSS, shadcn/ui
+- **Backend**: Express.js, Node.js
+- **Database**: PostgreSQL with Drizzle ORM
+- **APIs**: OpenDataSoft for city data, OpenWeatherMap for weather data
+- **State Management**: React Query
+- **Routing**: Wouter
+- **Styling**: TailwindCSS with a custom theme
 
-## Getting Started
+## Setup Instructions
 
 ### Prerequisites
 
 - Node.js (v18+)
+- npm or yarn
 - PostgreSQL database
+- OpenWeatherMap API key
+
+### Environment Variables
+
+Create a `.env` file in the root directory and add:
+
+```
+DATABASE_URL=your_postgresql_connection_string
+OPENWEATHERMAP_API_KEY=your_api_key
+```
 
 ### Installation
 
-1. Clone the repository
+1. Clone this repository
 ```bash
-git clone https://github.com/your-username/intelliclick-crm.git
-cd intelliclick-crm
+git clone https://github.com/yourusername/weather-forecast-app.git
+cd weather-forecast-app
 ```
 
 2. Install dependencies
@@ -38,46 +54,44 @@ cd intelliclick-crm
 npm install
 ```
 
-3. Set up environment variables
-Create a `.env` file in the root directory and add:
-```
-DATABASE_URL=postgres://username:password@localhost:5432/your_database
-```
-
-4. Push the database schema
+3. Set up the database
 ```bash
 npm run db:push
 ```
 
-5. Start the development server
+4. Start the development server
 ```bash
 npm run dev
 ```
 
-## Deployment to Render
+## Deployment
 
-This project can be easily deployed on Render:
+### Deploy to Vercel
 
-1. Push the project to GitHub
-2. In Render, create a new Web Service
-3. Connect to your GitHub repository
-4. Use the following build settings:
-   - Build Command: `npm install && npm run build`
-   - Start Command: `npm start`
-5. Add the `DATABASE_URL` environment variable pointing to your PostgreSQL database
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fyourusername%2Fweather-forecast-app)
 
-## Documentation
+1. Push your code to GitHub
+2. Connect your GitHub repository to Vercel
+3. Add your environment variables in the Vercel dashboard
+4. Deploy!
 
-The project includes several documentation files:
+### Deploy to Netlify
 
-- `CRM_Heuristic_Evaluation_Report.md` - Evaluation of the original UI based on Nielsen's heuristics
-- `CRM_Design_Justification_and_User_Flow.md` - Explanation of design decisions and user flows
-- `CRM_Redesign_Wireframes_Documentation.md` - Details about the wireframes and design elements
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/yourusername/weather-forecast-app)
 
-## Author
+## Issue 
 
-Developed by Shashank M Y
+- The Postgres database in render is having few issues right now so the leads may not be visible. If so this is how the leads section appears for clarification:
+
+![image](https://github.com/user-attachments/assets/687ca3b6-7dea-43d7-8dab-c4d710894bad)
+
+
+## Credits
+
+- Weather data provided by [OpenWeatherMap](https://openweathermap.org/)
+- City data provided by [OpenDataSoft](https://public.opendatasoft.com/)
+- Icons from [Lucide React](https://lucide.dev/)
 
 ## License
 
-This project is licensed under the MIT License - see the LICENSE file for details
+MIT
